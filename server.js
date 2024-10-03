@@ -47,13 +47,11 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // API routes
-const authentication = require("./routes/api");
 const wheelChairRouter = require("./routes/wheelChairRoutes");
 const roomsRouter = require("./routes/roomRoutes");
 const dashBoardRouter = require("./routes/dashBoardInfoRoutes");
 const patientRouter = require("./routes/patientRoutes");
 
-app.use("/api/auth", authentication); // Mount the authentication router
 app.use("/api/dashBoardInfo", dashBoardRouter); // Mount the dashboard info router
 app.use("/api/wheelchair", wheelChairRouter); // Mount the wheelchair management router
 app.use("/api/rooms", roomsRouter); // Mount the room management router
@@ -63,8 +61,9 @@ app.use("/api/patient", patientRouter); // Mount the patient management router
 const PORT = process.env.PORT || 8000;
 
 // Start the server and log the mode and port it's running on
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
    console.log(
       `Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`
    );
 });
+module.exports = app;
