@@ -14,30 +14,30 @@ const { authorizer } = require("../middlewares/is_auth"); // Uncomment this line
  * @desc Fetch all rooms in the hospital
  * @route GET /api/rooms/all
  */
-router.get("/all", getAllRooms);
+router.get("/all", authorizer, getAllRooms);
 
 /**
  * @desc Fetch all availablerooms in the hospital
  * @route GET /api/rooms/available
  */
-router.get("/available", getAvailableRooms);
+router.get("/available", authorizer, getAvailableRooms);
 
 /**
  * @desc Swap room
  * @route PUT /api/rooms/swapRoom
  */
-router.put("/swapRoom", swapRoom);
+router.put("/swapRoom", authorizer, swapRoom);
 
 /**
  * @desc Update a single room
  * @route PUT /api/rooms/updateRoom/:roomId
  */
-router.put("/changePatientRoom", changePatientRoom);
+router.put("/changePatientRoom", authorizer, changePatientRoom);
 
 /**
  * @desc Fetch room by ID
  * @route GET /api/rooms/:roomId
  */
-router.get("/:roomId", getRoomById);
+router.get("/:roomId", authorizer, getRoomById);
 
 module.exports = router;
