@@ -8,6 +8,6 @@ const { authorizer } = require("../middlewares/is_auth"); // Uncomment this line
  * @desc fetch  room  By Id
  * @route GET /api/dashboard/
  */
-router.get("/", authorizer, getAllDashBoardInfo);
+router.get("/", getAllDashBoardInfo);
 
 module.exports = router;
