@@ -24,7 +24,7 @@ module.exports = {
 
          next();
       } catch (err) {
-         console.error("Token verification failed:", err);
+         console.error("Token verification failed:", err.message);
          res.status(401).json({ error: "Unauthorized, Access Denied" });
       }
    },
