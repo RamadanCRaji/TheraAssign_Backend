@@ -20,6 +20,7 @@ module.exports = {
 
          // Attach the decoded token to the request object for further use
          req.user = decodedToken;
+         console.log({ decodedToken });
 
          next();
       } catch (err) {
@@ -28,3 +29,5 @@ module.exports = {
       }
    },
 };
+
+// https://juffalow.com/blog/javascript/express-server-with-jwt-authentication
