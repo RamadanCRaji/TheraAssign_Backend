@@ -21,7 +21,9 @@ module.exports = {
          const secret = process.env.SECRET;
          console.log("Secret Key:", secret);
 
-         const decodedToken = jwt.verify(access_token, secret);
+         const decodedToken = jwt.verify(access_token, secret, {
+            algorithms: ["HS256"],
+         });
 
          // Attach the decoded token to the request object for further use
          req.user = decodedToken;
