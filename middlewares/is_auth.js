@@ -6,6 +6,7 @@ module.exports = {
    authorizer: function (req, res, next) {
       console.log("i made it here");
       const authHeader = req.header("Authorization");
+      console.log({ authHeader });
       if (!authHeader) {
          return res.status(401).json({ error: "Unauthorized, Access Denied" });
       }
