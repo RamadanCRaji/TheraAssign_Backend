@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
-dotenv.config({ path: "../config/config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 module.exports = {
    authorizer: function (req, res, next) {
